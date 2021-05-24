@@ -2,7 +2,7 @@
 
 import sys
 
-if len(sys.argv)<2:
+if len(sys.argv) < 2:
     sys.exit("Please tell me your name")
 
 name = sys.argv[1]

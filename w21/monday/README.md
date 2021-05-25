@@ -117,7 +117,7 @@ Testing:
     $ python3 bmi.py 185 84
     You are normal or healthy weight with BMI of 24.543462381300216
 
-![bmi](Resources/bmi_testing.png)
+![bmi](Resources/bmi.png)
 
 ### pw1.5 Kaksi reittiä
 
@@ -139,7 +139,7 @@ Let's modify `helloflask.py` to return something from `127.0.0.1:5000/python`:
 
 Now navigating `127.0.0.1:5000/python` returns "Python is cool!":
 
-![flask second route](Resources/flask_second_route.png)
+![helloflask approute](Resources/helloflask_approute.png)
 
 ### pw1.6 base.html
 
@@ -184,7 +184,7 @@ I'll add a single paragraph so `base.html` has something to render besides blank
 
 Now running the Flask application and navigating to `127.0.0.1:5000/base` renders `templates/base.html`
 
-![flask html](Resources/flask_html.png)
+![flask html](Resources/helloflask_html.png)
 
 ## Sources
 

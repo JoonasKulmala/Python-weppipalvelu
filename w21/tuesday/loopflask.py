@@ -15,5 +15,13 @@ def colours():
 def foo():
 	return render_template("foo.html")
 
+@app.route("/maths")
+def maths():
+	number = 1
+	return render_template("maths.html", number=number)
+
+@app.route("/form", methods=["GET", "POST"])
+def form():
+	return render_template("form.html")
 
 app.run()

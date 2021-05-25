@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Title
-    </title>
 
-</head>
+{% block title %}
+colours
+{% endblock title %}
 
-<body>
-    <h1> List of {{ name }}</h1>
-    {% block body %}
-    {% for colour in colours %}
-    <p>{{ colour }}</p>
-    {% endfor %}
-    {% endblock body %}
-
-</body>
-
-</html>
+{% block content %}
+<h1> List of {{ name }}</h1>
+{% block body %}
+{% for colour in colours %}
+<p>{{ colour }}</p>
+{% endfor %}
+{% endblock body %}
+{% endblock content %}

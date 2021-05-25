@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% set title = "Math is magic" %}
+{% block title %}{{title}}{% endblock title %}
+{% block headline %}
+<h1>{{title}}</h1>
+{% endblock headline %}
+
+{% block body %}
+{% set number = 5 %}
+{% if number %}
+<p> Yeah we have a number nice!: {{ number }}</p>
+{% else %}
+<p>:C no numbers today</p>
+{% endif %}
+{% endblock body %}

@@ -3,9 +3,17 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def index():
+def base():
+	return render_template("base.html")
+
+@app.route("/colours")
+def colours():
     colours = ["black", "white", "yellow", "red", "red"]
-    return render_template("base.html", name="Colours", colours=colours)
+    return render_template("colours.html", name="Colours", colours=colours)
+
+@app.route("/foo")
+def foo():
+	return render_template("foo.html")
 
 
 app.run()

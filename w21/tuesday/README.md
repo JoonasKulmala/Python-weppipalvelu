@@ -16,11 +16,11 @@
 | Python | 3.8.5   |
 | Flask  | 2.0.1   |
 
-Flask and HTML templates.
+Flask and HTML templating.
 
 ## Exercises
 
-Exercises are contained within subdirectories; [here](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/tuesday/Assignments).
+All files are contained within subdirectories here: [Assignments](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/tuesday/Assignments).
 
 ### pw2.1 Muuttuja muottiin
 
@@ -211,7 +211,7 @@ Using the same `base.html` template as previously, let's create extending file `
 {% endblock content %}
 ```
 
-![colours](Assignments/pw2.3/templates/colours_browser.png)
+![colours](Assignments/pw2.3/Resources/colours_browser.png)
 
 ## Sources
 

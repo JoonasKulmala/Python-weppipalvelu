@@ -14,7 +14,9 @@ class Comment(db.Model):
     text = db.Column(db.String, nullable=False)
     name = db.Column(db.String, nullable=False)
 
+
 CommentForm = model_form(Comment, base_class=FlaskForm, db_session=db.session)
+
 
 @app.before_first_request
 def initMe():
@@ -40,6 +42,7 @@ def index():
 def msgPage():
     flash("This is a flash message!")
     return redirect("/")
+
 
 if __name__ == "__main__":
     app.run()

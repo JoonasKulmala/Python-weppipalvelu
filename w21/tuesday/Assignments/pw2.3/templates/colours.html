@@ -2,11 +2,13 @@
 
 
 {% block title %}
-colour
+<h1> List of {{ name }}</h1>
 {% endblock title %}
 
 {% block content %}
 {% block body %}
+{% for colour in colours %}
 <p>{{ colour }}</p>
+{% endfor %}
 {% endblock body %}
 {% endblock content %}

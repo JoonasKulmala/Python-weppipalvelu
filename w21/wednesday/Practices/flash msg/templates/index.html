@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% if get_flashed_messages() %}
+                        {% for message in get_flashed_messages() %}
+				<p><b>{{ message }}</b></p>
+			{% endfor %}
+	{% endif %}
+
+	{% for comment in comments %}
+		<p>{{ comment.name }}: {{ comment.text }}</p>
+	{% endfor %}
+{% endblock content %}

@@ -4,7 +4,7 @@
 
 Databases~
 
-## Exercises
+## Exercise
 
 ## Sources
 

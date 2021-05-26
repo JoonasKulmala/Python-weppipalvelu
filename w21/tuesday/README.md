@@ -218,3 +218,7 @@ Using the same `base.html` template as previously, let's create extending file `
 Tero Karvinen - [Python Web Service From Idea to Production #pw2](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/#pw2-muotit-ja-lomakkeet)
 
 ## Edit history
+
+27.05.2021
+* Fixed file permissions
+* Cleaned code

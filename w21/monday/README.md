@@ -195,3 +195,7 @@ WC3 - [Markup Validation Service](https://validator.w3.org/#validate_by_input)
 Julian Nash - [Serving HTML files | Learning Flask Ep. 3](https://pythonise.com/series/learning-flask/rendering-html-files-with-flask)
 
 ## Edit history
+
+27.05.2021
+* Fixed file permissions
+* Cleaned code

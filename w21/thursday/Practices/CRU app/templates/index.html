@@ -4,7 +4,9 @@
 {% block content %}
 
 {% for drink in drinks %}
-<p>{{ drink.name }}</p>
+<p>{{ drink.name }} -
+    <a href="{{ drink.id }}/edit">Edit</a>
+</p>
 {% endfor %}
 
 {% endblock content %}

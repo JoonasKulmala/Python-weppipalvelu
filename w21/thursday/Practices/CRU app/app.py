@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms.ext.sqlalchemy.orm import model_form
@@ -23,23 +23,30 @@ def initDb():
     drink = Drink(name="Coffee")
     db.session.add(drink)
 
+    drink = Drink(name="Tea")
+    db.session.add(drink)
+
     db.session.commit()
 
 
+@app.route("/<int:id>/edit", methods=["GET", "POST"])
 @app.route("/new", methods=["GET", "POST"])
-def newDrink():
-    form = DrinkForm()
+def newDrink(id=None):
+    drink = Drink()
+    if id:
+        drink = Drink.query.get_or_404(id)
+
+    form = DrinkForm(obj=drink)
 
     if form.validate_on_submit():
-        drink = Drink()
+        # Drink = Drink()
         form.populate_obj(drink)
 
         db.session.add(drink)
         db.session.commit()
 
-        print("New drink added to database")
-        # flash("Added")
-        # redirect("/")
+        flash("Drink added")
+        return redirect("/")
 
     return render_template("new.html", form=form)
 

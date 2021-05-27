@@ -1,0 +1,13 @@
+{% set title="Saved contacts" %}
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for contact in contacts %}
+<p>{{ contact.first_name }} {{ contact.last_name }} {{ contact.email }} {{ contact.phone_number }} -
+    <a href="{{ contact.id }}/edit">Edit -</a>
+    <a href="{{ contact.id }}/delete">Delete</a>
+</p>
+{% endfor %}
+
+{% endblock content %}

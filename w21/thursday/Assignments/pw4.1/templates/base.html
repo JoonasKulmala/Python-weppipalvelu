@@ -1,0 +1,32 @@
+{% if not title %}
+{% set title="Contacts application" %}
+{% endif %}
+
+<!doctype html>
+<html lang=en>
+
+<head>
+	<title>
+		{{ title }}
+	</title>
+	<meta charset="utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+	<nav>
+		<a href="/">Home</a> -
+		<a href="/new">New</a>
+	</nav>
+
+	{% for msg in get_flashed_messages() %}
+	<p><b>{{ msg }}</b></p>
+	{% endfor %}
+
+	{% block content%}
+
+	{% endblock content%}
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{% set title="Drink database" %}
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for drink in drinks %}
+<p>{{ drink.name }} -
+    <a href="{{ drink.id }}/edit">Edit -</a>
+    <a href="{{ drink.id }}/delete">Delete</a>
+</p>
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% block title %}
+Weather History
+{% endblock title %}
+
+{% extends "base.html" %}
+
+{% block content %}
+{% for weather in weathers %}
+<p>{{ weather.day }}: {{ weather.weather }}</p>
+<p><b>{{ weather.comment }}</b></p>
+{% endfor %}
+{% endblock content %}

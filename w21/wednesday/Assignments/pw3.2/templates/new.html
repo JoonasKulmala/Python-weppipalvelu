@@ -1,0 +1,17 @@
+{% block title %}
+Add weather
+{% endblock title %}
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method=POST>
+    {% for field in form %}
+    {% if not field.flags.hidden %}
+    <p>{{ field.label }}: {{ field }}</p>
+    {% endif %}
+    {% endfor %}
+    <input type="submit">
+</form>
+{% endblock content %}

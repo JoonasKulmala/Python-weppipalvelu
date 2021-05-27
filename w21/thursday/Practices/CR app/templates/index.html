@@ -1,0 +1,10 @@
+{% set title="Drink database" %}
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for drink in drinks %}
+<p>{{ drink.name }}</p>
+{% endfor %}
+
+{% endblock content %}

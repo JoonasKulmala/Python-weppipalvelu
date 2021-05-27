@@ -1,0 +1,27 @@
+{% if not title %}
+{% set title="placeholder title" %}
+{% endif %}
+
+<!doctype html>
+<html lang=en>
+
+<head>
+	<title>
+		{{ title }}
+	</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+	<nav>
+		<a href="/">Home</a> -
+		<a href="/new">New</a>
+	</nav>
+
+	{% block content%}
+
+	{% endblock content%}
+</body>
+
+</html>

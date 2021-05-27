@@ -11,11 +11,13 @@
 
 Welcome to **Python weppipalvelu**! This repository includes both lesson practices and course assignments.
 
+This course is about Python programming language and Flask framework. Basic CRUD application creating and stuff like that.
+
 ## Prerequisities
 
-Python 3 is required for running programs.
+Python 3 is required for running applications.
 
-Use of `virtualenv` is strongly recommended when installing python dependencies. Additionally `virtualenvwrapper` is recommended for controlling these enviroments. 
+For PIP users use of `virtualenv` is strongly recommended when installing python dependencies. Additionally `virtualenvwrapper` is recommended for controlling these enviroments. 
 
 Install dependencies for development enviroment:
 

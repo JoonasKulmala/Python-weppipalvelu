@@ -9,7 +9,7 @@
         {% if not field.flags.hidden %}
         {{ field.label }} <br>
         {% endif %}
-        {{ field }}
+        {{ field (class="form-control-lg is-invalid") }}
     </p>
     {% endfor %}
     <input type=submit>

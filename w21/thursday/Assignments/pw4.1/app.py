@@ -2,8 +2,6 @@ from flask import Flask, render_template, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms.ext.sqlalchemy.orm import model_form
-# from wtforms.validators import InputRequired, Email
-# from wtforms import StringField, TextAreaField, SubmitField
 
 
 app = Flask(__name__)

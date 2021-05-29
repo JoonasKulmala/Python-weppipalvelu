@@ -29,6 +29,8 @@ Install Flask:
 
 ## Exercises
 
+All files are contained within subdirectories here: [Assignments](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/monday/Assignments)
+
 ### pw1.1 Hei HTML
 
 [Root directory](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/monday/Assignments/pw1.1)

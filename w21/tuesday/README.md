@@ -24,6 +24,8 @@ All files are contained within subdirectories here: [Assignments](https://github
 
 ### pw2.1 Muuttuja muottiin
 
+[Root directory](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/tuesday/Assignments/pw2.1)
+
 A variable needs to be rendered in HTML. Let's declare a variable in flask app and make that happen.
 
 In the flask application `app.py`, simply declare variable *greeting* and instruct HTML file what to render.
@@ -42,7 +44,7 @@ def base():
 app.run()
 ```
 
-Next up instruct `base.html` where to render the variable - note the line `<p>{{ greeting }}</p>`
+Next instruct `base.html` where to render the variable - note the line `<p>{{ greeting }}</p>`
 
  ```
   <!DOCTYPE html>
@@ -81,6 +83,8 @@ Next up instruct `base.html` where to render the variable - note the line `<p>{{
 ![screenshot](Assignments/pw2.1/Resources/pw2.1_browser.png)
 
 ### pw2.2 Tuplamuuttuja
+
+[Root directory](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/tuesday/Assignments/pw2.2)
 
 Templating HTML files. No point creating each HTML from the scratch when we can just use the base boilerplate over and over again.
 
@@ -170,6 +174,8 @@ bar
 ![bar](Assignments/pw2.2/Resources/bar_html.png)
 
 ### pw2.3 Toista tätä, toista tätä
+
+[Root directory](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/tuesday/Assignments/pw2.3)
 
 Let's render a list of colours in an array.
 

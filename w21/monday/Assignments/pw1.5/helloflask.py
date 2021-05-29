@@ -8,13 +8,13 @@ def hello():
 
 
 @app.route("/python")
-def hellopython():
+def python():
     return "Python is cool!"
 
 
-@app.route("/base")
-def base():
-    return render_template("base.html")
+@app.route("/foo")
+def foo():
+    return ("Foo is here all alone")
 
 
 app.run()

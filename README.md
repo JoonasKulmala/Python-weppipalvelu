@@ -13,11 +13,20 @@ Welcome to **Python weppipalvelu**! This repository includes both lesson practic
 
 This course is about Python programming language and Flask framework. Basic CRUD application creating and stuff like that.
 
+All assigned & returned exercises can be found in each day's `/Assignments` directory, as seen on example picture below
+
+`Python-weppipalvelu/w21/monday/Assignments`
+
+![tree](exercise_location_tree.png)
+
 ## Prerequisities
 
-Python 3 is required for running applications.
+Python 3 and Flask are required to run programs. Later exercises may require additional python dependencies to function.
 
-For PIP users use of `virtualenv` is strongly recommended when installing python dependencies. Additionally `virtualenvwrapper` is recommended for controlling these enviroments. 
+    # Install Flask using apt
+    $ sudo apt-get install python3-flask
+
+For PIP use of `virtualenv` is strongly recommended when installing python dependencies. Additionally `virtualenvwrapper` is recommended for controlling these enviroments. 
 
 Install dependencies for development enviroment:
 

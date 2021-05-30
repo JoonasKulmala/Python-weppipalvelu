@@ -1,0 +1,22 @@
+{% set title="Comment Board" %}
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for comment in comments %}
+<p>
+        {{ comment.comment }}
+        {% if currentUser() %}
+        <a href="/edit/{{ comment.id }}">Edit</a> -
+        <a href="/delete/{{ comment.id }}">Delete</a>
+        {% endif %}
+</p>
+{% endfor %}
+
+{% endblock content %}
+
+
+
+{% block aside %}
+
+{% endblock aside %}

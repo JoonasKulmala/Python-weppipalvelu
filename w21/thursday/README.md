@@ -19,7 +19,7 @@ Flask CRUD application, automatic form & database creation.
 
 ## Exercises
 
-ll files are contained within subdirectories here: [Assignments](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/thursday/Assignments).
+All files are contained within subdirectories here: [Assignments](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/thursday/Assignments).
 
 ### pw4.1 Osoitekirja
 

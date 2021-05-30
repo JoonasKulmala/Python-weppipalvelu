@@ -23,6 +23,8 @@ All files are contained within subdirectories here: [Assignments](https://github
 
 ### pw3.1 Flash
 
+[Root directory](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/wednesday/Assignments/pw3.1)
+
 Two different URL endpoints must each send a flash message to root endpoint.
 
 Few interesting points here:
@@ -105,6 +107,8 @@ Now running the app and navigating to endpoints **/foo** and **/bar** will send 
 ![bar flash](Assignments/pw3.1/Resources/bar_flash.png)
 
 ### pw3.2 Automaattinen tietokanta ja lomake
+
+[Root directory](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/wednesday/Assignments/pw3.2)
 
 Automatically create database + form when running the application.
 

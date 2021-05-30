@@ -23,6 +23,8 @@ All files are contained within subdirectories here: [Assignments](https://github
 
 ### pw4.1 Osoitekirja
 
+[Root directory](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/thursday/Assignments/pw4.1)
+
 CRUD application that saves the following information to database:
 * id
 * first name
@@ -212,6 +214,8 @@ Also added a warning when trying to submit a form without sufficient data:
 ![error](Assignments/pw4.1/Resources/error.png)
 
 ### pwd4.3
+
+[Root directory](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/thursday/Assignments/pw4.3)
 
 Here's my initial Flask CRUD application. It's somewhat more simplistic than the previous app: [pw4.3](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/thursday/Assignments/pw4.3)
 

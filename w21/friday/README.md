@@ -17,7 +17,7 @@ Flask application with fully functional CRUD (Create, Read, Update, Delete) meth
 
 ## Exercises
 
-All files are contained within subdirectories here: [Assignments](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/fridat/Assignments).
+All files are contained within subdirectories here: [Assignments](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w21/friday/Assignments).
 
 ### pw5.1 Book160
 

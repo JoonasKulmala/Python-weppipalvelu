@@ -53,28 +53,28 @@ def loginRequired():
 def initDb():
     db.create_all()
 
-   # plot = Plot(plot="An old dragon who lived by the sea becomes a vlogger. He faces monumental obstacles such as not having fingers for typing with a keyboard designed for humans and having a bad reputation as a fire breathing monstrosity.")
-   # db.session.add(plot)
+    plot = Plot(plot="An old dragon who lived by the sea becomes a vlogger. He faces monumental obstacles such as not having fingers for typing with a keyboard designed for humans and having a bad reputation as a fire breathing monstrosity.")
+    db.session.add(plot)
 
-   # plot = Plot(plot="The plot is <writes a long, confusing text about a dog who loses its parents and befriends an unicorn with a dream of becoming the world's greatest painter>.")
-   # db.session.add(plot)
+    plot = Plot(plot="The plot is <writes a long, confusing text about a dog who loses its parents and befriends an unicorn with a dream of becoming the world's greatest painter>.")
+    db.session.add(plot)
 
-   # plot = Plot(plot="A young girl moves to a small town and meets a young boy who turns out to be a vampire who sparkles in direct sunlight and drives a modest hatchback Volvo.")
-   # db.session.add(plot)
+    plot = Plot(plot="A young girl moves to a small town and meets a young boy who turns out to be a vampire who sparkles in direct sunlight and drives a modest hatchback Volvo.")
+    db.session.add(plot)
 
-   # user = User(email="admin@example.com", role="admin")
-   # user.setPassword("password")
-   # db.session.add(user)
+    user = User(email="admin@example.com", role="admin")
+    user.setPassword("password")
+    db.session.add(user)
 
-   # user = User(email="user@example.com", role="user")
-   # user.setPassword("password")
-   # db.session.add(user)
+    user = User(email="user@example.com", role="user")
+    user.setPassword("password")
+    db.session.add(user)
 
     db.session.commit()
 
 
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
-# Create a method that restricts deleting posts to its author
+#
 @app.route("/new", methods=["GET", "POST"])
 def newPlot(id=None):
     loginRequired()
@@ -166,8 +166,7 @@ def logoutView():
 def registerView():
     form = RegisterForm()
     if form.validate_on_submit():
-        # Needs to be hidden or validated elsewhere
-        if form.key.data != "joonas":
+        if form.key.data != "your_key_name":  # Change to your key name
             flash("Bad registration key.")
             return redirect("/register")
         user = User()
@@ -178,7 +177,3 @@ def registerView():
         flash("Your new account has been created.")
         return redirect("/login")
     return render_template("register.html", form=form, button="Login")
-
-
-if __name__ == "__main__":
-    app.run()

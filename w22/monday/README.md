@@ -87,7 +87,15 @@ Now head to `/home/joonaswsgi/public_wsgi`. This is where Flask application as w
 
 ![public_wsgi](Assignments/pw6.1/Resources/public_wsgi_tree.png)
 
-Flask application `app.py`, full code is [here](Assignments/pw6.1/Book160/app.py). Note that in line **X** you have to set your own registration key
+Flask application `app.py`, full code is [here](Assignments/pw6.1/Book160/app.py).
+
+**Before deployment be sure to change (and never publish) both test users' passwords as well as registration key**
+
+Passwords: lines 67 and 72
+
+![passwords](Assignments/pw6.1/Resources/user_passwords.png)
+
+Registration key: line 171
 
 ```py
 if form.key.data != "your_key_name":

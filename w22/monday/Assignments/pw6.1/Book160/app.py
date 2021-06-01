@@ -62,10 +62,12 @@ def initDb():
     plot = Plot(plot="A young girl moves to a small town and meets a young boy who turns out to be a vampire who sparkles in direct sunlight and drives a modest hatchback Volvo.")
     db.session.add(plot)
 
+    # Default password, change to secure before deployment
     user = User(email="admin@example.com", role="admin")
     user.setPassword("password")
     db.session.add(user)
 
+    # Default password, change to secure before deployment
     user = User(email="user@example.com", role="user")
     user.setPassword("password")
     db.session.add(user)

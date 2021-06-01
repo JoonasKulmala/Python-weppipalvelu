@@ -1,0 +1,31 @@
+{% if not title %}
+{% set title="Login to your account" %}
+{% endif %}
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method=POST>
+
+        {% for field in form %}
+        <p>
+                {% if not field.flags.hidden %}
+                {{ field.label }}<br>
+
+                {% for fieldError in field.errors %}
+                <strong>{{ fieldError }}</strong>
+                {% endfor %}
+                {% endif %}
+
+                {{ field }}
+        </p>
+        {% endfor %}
+        {% if title == "Login to your account" %}
+        <button type="submit" name="submit_a" value="submit_a"> Login </button>
+        {% else %}
+        <button type="submit" name="submit_a" value="submit_a"> Register </button>
+        {% endif %}
+</form>
+
+{% endblock content %}

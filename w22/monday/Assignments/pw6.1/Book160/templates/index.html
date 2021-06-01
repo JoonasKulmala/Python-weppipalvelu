@@ -1,0 +1,20 @@
+{% set title="Book160 plots" %}
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for plot in plots %}
+<p>
+        {{ plot.plot }} <br>
+        {% if currentUser() %}
+        <a href="/edit/{{ plot.id }}">Edit</a> -
+        <a href="/delete/{{ plot.id }}">Delete</a>
+        {% endif %}
+</p>
+{% endfor %}
+
+{% endblock content %}
+
+{% block aside %}
+
+{% endblock aside %}

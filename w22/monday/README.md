@@ -1,6 +1,21 @@
 # w22 monday | Joonas Kulmala
 
+- [w22 monday | Joonas Kulmala](#w22-monday--joonas-kulmala)
+- [Exercise goals & enviroment](#exercise-goals--enviroment)
+  - [Exercises](#exercises)
+    - [pw6.1](#pw61)
+      - [Creating UNIX user for deployment](#creating-unix-user-for-deployment)
+      - [Creating WSGI config files](#creating-wsgi-config-files)
+    - [pw6.2](#pw62)
+  - [Sources](#sources)
+  - [Edit history](#edit-history)
+
 # Exercise goals & enviroment
+
+| Tool   | Version |
+| ------ | ------- |
+| Python | 3.8.5   |
+| Flask  | 2.0.1   |
 
 Connecting Flask application to database, deployment using WSGI module.
 
@@ -46,7 +61,7 @@ Now any user who is granted group **joonaswsgi** can read+write `/home/joonaswsg
 Now we need files to configure what and how to deploy Flask application. Apache2 is needed for this part - install it with `$ sudo apt-get install apache2`.
 
 In `/etc/apache2/sites-available`
-```bash
+```
 # apache2 conf file
 $ touch joonaswsgi.conf
 

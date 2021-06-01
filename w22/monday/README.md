@@ -3,10 +3,10 @@
 - [w22 monday | Joonas Kulmala](#w22-monday--joonas-kulmala)
 - [Exercise goals & enviroment](#exercise-goals--enviroment)
   - [Exercises](#exercises)
-    - [pw6.1](#pw61)
+    - [pw6.1 Flask deployment](#pw61-flask-deployment)
       - [Creating UNIX user for deployment](#creating-unix-user-for-deployment)
       - [Creating WSGI config files](#creating-wsgi-config-files)
-    - [pw6.2](#pw62)
+    - [pw6.2 Oma projekti](#pw62-oma-projekti)
   - [Sources](#sources)
   - [Edit history](#edit-history)
 
@@ -27,7 +27,7 @@ This assignment is functional and usable at my domain [joonaskulmala.me](http://
 
 ![crud deployment](Assignments/pw6.1/Resources/crud_deployed.png)
 
-### pw6.1
+### pw6.1 Flask deployment
 
 [Root directory](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w22/monday/Assignments/pw6.1)
 
@@ -133,7 +133,7 @@ After that navigate to your server's IP or domain - mine's [joonaskulmala.me](ht
 
 And here we are - fully functional Flask CRUD application with Postgres database.
 
-### pw6.2
+### pw6.2 Oma projekti
 
 [Root directory](https://github.com/JoonasKulmala/Python-weppipalvelu/tree/main/w22/monday/Assignments/pw6.2)
 

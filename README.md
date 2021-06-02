@@ -13,7 +13,7 @@ Welcome to **Python weppipalvelu**! This repository includes both lesson practic
 
 This course is about Python and Flask framework. The end result, `Mini Project` will be a functional CRUD application deployed on a public server, which can be accessed here: http://joonaskulmala.me/
 
-Mini Project is also available as a stand-alone GitHub repository on ___
+Mini Project is also available as a stand-alone GitHub repository on https://github.com/JoonasKulmala/Flask-Forum.
 
 All assigned & returned exercises can be found in each day's `/Assignments` directory, as seen on example picture below
 

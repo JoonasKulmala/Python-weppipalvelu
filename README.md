@@ -4,6 +4,7 @@
   - [Course description](#course-description)
   - [Prerequisities](#prerequisities)
   - [Acknowledgments](#acknowledgments)
+  - [Licence](#licence)
 
 ![GitHub top language](https://img.shields.io/github/languages/top/JoonasKulmala/Python-weppipalvelu)
 
@@ -38,3 +39,7 @@ Install dependencies for development enviroment:
 ## Acknowledgments
 
 This course is hosted by Tero Karvinen. The course website can be found here: [Python Web Service From Idea to Production](https://terokarvinen.com/2021/python-web-service-from-idea-to-production/)
+
+## Licence
+
+G[PL-3.0 Licence](https://github.com/JoonasKulmala/Python-weppipalvelu/blob/main/LICENSE)

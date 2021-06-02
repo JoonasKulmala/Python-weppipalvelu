@@ -11,7 +11,9 @@
 
 Welcome to **Python weppipalvelu**! This repository includes both lesson practices and course assignments.
 
-This course is about Python programming language and Flask framework. Basic CRUD application creating and stuff like that.
+This course is about Python and Flask framework. The end result, `Mini Project` will be a functional CRUD application deployed on a public server, which can be accessed here: http://joonaskulmala.me/
+
+Mini Project is also available as a stand-alone GitHub repository on ___
 
 All assigned & returned exercises can be found in each day's `/Assignments` directory, as seen on example picture below
 
@@ -21,10 +23,11 @@ All assigned & returned exercises can be found in each day's `/Assignments` dire
 
 ## Prerequisities
 
-Python 3 and Flask are required to run programs. Later exercises may require additional python dependencies to function.
+`Python Dependencies`
+* python3-flask
+* python3-flask-sqlalchemy
 
-    # Install Flask using apt
-    $ sudo apt-get install python3-flask
+Python 3 and Flask are required to run applications. Later exercises may require additional python dependencies to function.
 
 For PIP use of `virtualenv` is strongly recommended when installing python dependencies. Additionally `virtualenvwrapper` is recommended for controlling these enviroments. 
 

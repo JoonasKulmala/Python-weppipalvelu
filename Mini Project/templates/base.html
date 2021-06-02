@@ -1,0 +1,62 @@
+{% if not title %}
+{% set title="Flask Forum Application" %}
+{% endif %}
+
+<!doctype html>
+<html lang=en>
+
+<head>
+        <style>
+        </style>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>{{ title }}</title>
+        <meta charset="utf-8">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+        <nav>
+                <a href="/">Home</a> |
+                <a href="/new">New thread</a> |
+
+                {% if currentUser() %}
+                <a href="/logout">Logout</a> |
+                <a href="/profile">Profile</a> |
+                Logged in as
+                <strong>
+                        {{ currentUser().email }}
+                </strong>
+
+                {% else %}
+                <a href="/login">Login</a> |
+                <a href="/register">Register</a>
+
+                {% endif %}
+        </nav>
+
+        {% if get_flashed_messages() %}
+        {% for msg in get_flashed_messages() %}
+        <strong>
+                <p>{{ msg }}</p>
+        </strong>
+        {% endfor %}
+        {% endif %}
+
+        {% block info %}
+        {% if not currentUser() %}
+
+        {% endif %}
+        {% endblock info %}
+
+        <h1>{{ title }}</h1>
+        {% block content %}
+        <p>Hello, world!</p>
+        {% endblock content %}
+
+        <aside>
+                {% block aside %}
+                {% endblock aside %}
+        </aside>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+nav {
+        background-color: rgb(238, 95, 95);
+        color: black
+}
+a {
+        color: black
+}
+
+body {
+        background-color: rgba(70, 116, 161, 0.2);
+}
+
+h1 {
+        color: black(59, 58, 61, 0.185);
+        text-align: left;
+}
+
+p {
+        font-family: verdana;
+        font-size: 20px;
+        color: black;
+}

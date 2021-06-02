@@ -6,20 +6,27 @@ from wtforms import StringField, PasswordField, validators, SubmitField
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.secret_key = "ojiemieCh3eeMee4vahX"
-#app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql:///joonas'
+# Postgres database, comment out to use in-memory database
+# app.config["SQLALCHEMY_DATABASE_URI"] = "postgres:///your_database_name"
+app.secret_key = "phi7ThothioLeopa0pai"  # pwgen -1 20
 db = SQLAlchemy(app)
 
 
-class Plot(db.Model):
+class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    plot = db.Column(db.String, nullable=False)
+    post = db.Column(db.String, nullable=False)
+
+
+class Comment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    comment = db.Column(db.String, nullable=False)
+    postId = db.Column(db.Integer)
 
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String, nullable=False, unique=True)
-    role = db.Column(db.String, default="user")
+    role = db.Column(db.String, nullable=False, default="user")
     passwordHash = db.Column(db.String, nullable=False)
 
     def setPassword(self, password):
@@ -29,7 +36,9 @@ class User(db.Model):
         return check_password_hash(self.passwordHash, password)
 
 
-PlotForm = model_form(Plot, base_class=FlaskForm, db_session=db.session)
+PostForm = model_form(Post, base_class=FlaskForm, db_session=db.session)
+
+CommentForm = model_form(Comment, base_class=FlaskForm, db_session=db.session)
 
 
 class UserForm(FlaskForm):
@@ -43,31 +52,29 @@ class RegisterForm(UserForm):
                       validators.InputRequired()])
 
 
-def loginRequired():
-    if not currentUser():
-        flash("Only registered users can post their plots. Please login to your account.")
-        abort(403)
-
-
+# Test data, do not deploy in production. Always use secure passwords.
 @app.before_first_request
 def initDb():
     db.create_all()
 
-    plot = Plot(plot="An old dragon who lived by the sea becomes a vlogger. He faces monumental obstacles such as not having fingers for typing with a keyboard designed for humans and having a bad reputation as a fire breathing monstrosity.")
-    db.session.add(plot)
+    post = Post(post="How cold is it in space?")
+    db.session.add(post)
 
-    plot = Plot(plot="The plot is <writes a long, confusing text about a dog who loses its parents and befriends an unicorn with a dream of becoming the world's greatest painter>.")
-    db.session.add(plot)
+    post = Post(post="Hey people, take a look at my new car!")
+    db.session.add(post)
 
-    plot = Plot(plot="A young girl moves to a small town and meets a young boy who turns out to be a vampire who sparkles in direct sunlight and drives a modest hatchback Volvo.")
-    db.session.add(plot)
+    comment = Comment(
+        comment="Better put on some layers if you're moonwalking.", postId=1)
+    db.session.add(comment)
 
-    # Default password, change to secure before deployment
+    comment = Comment(
+        comment="What model year is your car? It looks brand new :)", postId=2)
+    db.session.add(comment)
+
     user = User(email="admin@example.com", role="admin")
     user.setPassword("password")
     db.session.add(user)
 
-    # Default password, change to secure before deployment
     user = User(email="user@example.com", role="user")
     user.setPassword("password")
     db.session.add(user)
@@ -75,57 +82,75 @@ def initDb():
     db.session.commit()
 
 
+def loginRequired():
+    if not currentUser():
+        flash("Only registered users can post new threads. Please login to your account.")
+        abort(403)
+
+
+@app.route("/<int:id>", methods=["GET", "POST"])
+def thread(id):
+    posts = Post.query.filter_by(id=id)
+    return render_template("thread.html", posts=posts)
+
+
+# Update, Create new Post
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
-#
 @app.route("/new", methods=["GET", "POST"])
-def newPlot(id=None):
+def newPost(id=None):
     loginRequired()
-
     if id:
-        plot = Plot.query.get_or_404(id)
+        post = Post.query.get_or_404(id)
     else:
-        plot = Plot()
-
-    form = PlotForm(obj=plot)
-
+        post = Post()
+    form = PostForm(obj=post)
     if form.validate_on_submit():
-        form.populate_obj(plot)
-
-        db.session.add(plot)
+        form.populate_obj(post)
+        db.session.add(post)
         db.session.commit()
-
-        flash("New comment posted!")
+        flash("New thread created!")
         return redirect("/")
 
     return render_template("new.html", form=form)
 
 
+# DELETE Post
 @app.route("/delete/<int:id>")
-def deletePlot(id):
+def deletePost(id):
     loginRequired()
-    plot = Plot.query.get_or_404(id)
-    db.session.delete(plot)
+    post = Post.query.get_or_404(id)
+    db.session.delete(post)
     db.session.commit()
-    flash("Your post has been deleted.")
+    flash("Post deleted.")
     return redirect("/")
 
 
+# Incomplete: User profile page
+@app.route("/profile")
+def profile():
+    return render_template("profile.html")
+
+
+# Main page
 @app.route("/")
 def index():
-    plots = Plot.query.all()
-    return render_template("index.html", plots=plots)
+    posts = Post.query.all()
+    return render_template("index.html", posts=posts)
 
 
+# Error handling
 @app.errorhandler(404)
 def custom404(e):
     return render_template("404.html")
 
 
+# Error handling
 @app.errorhandler(403)
 def custom403(e):
     return redirect("/login")
 
 
+# User login session
 def currentUser():
     try:
         uid = int(session["uid"])
@@ -137,6 +162,7 @@ def currentUser():
 app.jinja_env.globals["currentUser"] = currentUser
 
 
+# Authenticate login
 @app.route("/login", methods=["GET", "POST"])
 def loginView():
     form = UserForm()
@@ -145,30 +171,36 @@ def loginView():
         password = form.password.data
         user = User.query.filter_by(email=email).first()
         if not user:
-            flash("Invalid login")
+            flash("Invalid login.")
             return redirect("/login")
         if not user.checkPassword(password):
-            flash("Invalid login")
+            flash("Invalid login.")
             return redirect("/login")
-        flash("Logged in, welcome!")
+        flash("Login successful!")
         session["uid"] = user.id
         return redirect("/")
 
     return render_template("login.html", form=form)
 
 
+# User logout
 @app.route("/logout")
 def logoutView():
     session["uid"] = None
-    flash("You have been logged out from your account.")
+    flash("Logged out")
     return redirect("/")
 
 
+# Authenticate registration
 @app.route("/register", methods=["GET", "POST"])
 def registerView():
     form = RegisterForm()
     if form.validate_on_submit():
-        if form.key.data != "your_key_name":  # Change to your key name
+        email = form.email.data
+        if email and User.query.filter_by(email=email).first():
+            flash('Email address already registered for an account.')
+            return redirect("/register")
+        if form.key.data != "your_key_name":  # Use secure name for registration key
             flash("Bad registration key.")
             return redirect("/register")
         user = User()
@@ -176,9 +208,11 @@ def registerView():
         user.setPassword(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash("Your new account has been created.")
+        flash("New account created!")
         return redirect("/login")
+
     return render_template("register.html", form=form, button="Login")
+
 
 # Remove from production deployment build
 if __name__ == "__main__":

@@ -1,0 +1,24 @@
+{% set title="Threads" %}
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for post in posts %}
+<p>
+        {{ post.post }} <br>
+        <a href="/{{ post.id }}">Comments</a>
+        {% if currentUser() %}
+        - <a href="/edit/{{ post.id }}">Edit</a> -
+        <a href="/delete/{{ post.id }}">Delete</a>
+        {% endif %}
+</p>
+{% endfor %}
+
+{% endblock content %}
+
+
+
+{% block aside %}
+
+
+{% endblock aside %}

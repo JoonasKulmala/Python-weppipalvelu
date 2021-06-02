@@ -42,4 +42,4 @@ This course is hosted by Tero Karvinen. The course website can be found here: [P
 
 ## Licence
 
-G[PL-3.0 Licence](https://github.com/JoonasKulmala/Python-weppipalvelu/blob/main/LICENSE)
+[GPL-3.0 Licence](https://github.com/JoonasKulmala/Python-weppipalvelu/blob/main/LICENSE)
